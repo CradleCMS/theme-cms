@@ -938,7 +938,7 @@
         },
         {
           "caption": "Content width",
-          "key": "page_width",
+          "key": "pageWidth",
           "options": [
             {
               "caption": "Narrow (default)",
@@ -965,13 +965,14 @@
         },
         {
           "caption": "Contact page",
-          "key": "contactPage",
+          "key": "pageContact",
           "type": "header"
         },
         {
-          "caption": "Use Daisy form",
-          "key": "contactDaisy",
-          "type": "checkbox"
+          "caption": "Form",
+          "default": "Select form",
+          "key": "pageContactform",
+          "type": "form"
         }
       ],
       "default": null

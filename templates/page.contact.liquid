@@ -1,15 +1,10 @@
-<section class="p-10 prose mx-auto">
-    <h1>{{ meta.h1 }}</h1>
-    <div>
-        <div class="{{ article.format }}">{{ page.html }}</div>
-        {% if settings.contactDaisy %}
-            {% include 'daisyForm' %}
-        {% else %}
-        <div class="card shrink-0 w-full max-w-m {{ settings.general_shadow }}">
-            <div class="card-body">
-            {% form 'contact' %}{% endform %}
-            </div>
-        </div>
-        {% endif %}
+{{ page | img_tag:"x1200",class:"absolute w-full right-0 max-h-[30vh] object-cover" }} 
+<header class="relative prose{{ settings.pageWidth }} mx-auto pt-20 pb-10">
+   <h1 class="max-w-[80%]">{{ meta.h1 }}</h1>
+</header>
+<section class="p-4 md:p-10 prose{{ settings.pageWidth }} mx-auto relative bg-base-100">
+    <div class="{{ page.format }} pb-10">
+        {{ page.html }}
     </div>
+    {% form settings.pageContactform.form %}{% endform %}
 </section>

@@ -1862,6 +1862,9 @@
   .absolute {
     position: absolute;
   }
+  .relative {
+    position: relative;
+  }
   .sticky {
     position: sticky;
   }
@@ -1870,6 +1873,9 @@
   }
   .top-1 {
     top: var(--spacing);
+  }
+  .right-0 {
+    right: 0px;
   }
   .right-1 {
     right: var(--spacing);
@@ -3160,6 +3166,9 @@
   .max-h-72 {
     max-height: calc(var(--spacing) * 72);
   }
+  .max-h-\[30vh\] {
+    max-height: 30vh;
+  }
   .min-h-\[20vh\] {
     min-height: 20vh;
   }
@@ -3228,6 +3237,9 @@
   }
   .max-w-\[65rem\] {
     max-width: 65rem;
+  }
+  .max-w-\[80\%\] {
+    max-width: 80%;
   }
   .max-w-\[80ch\] {
     max-width: 80ch;
@@ -3445,6 +3457,9 @@
   .fill-current {
     fill: currentcolor;
   }
+  .object-cover {
+    object-fit: cover;
+  }
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
@@ -3486,6 +3501,9 @@
   }
   .pt-16 {
     padding-top: calc(var(--spacing) * 16);
+  }
+  .pt-20 {
+    padding-top: calc(var(--spacing) * 20);
   }
   .pb-4 {
     padding-bottom: calc(var(--spacing) * 4);
@@ -3747,6 +3765,9 @@
     }
     .md\:p-8 {
       padding: calc(var(--spacing) * 8);
+    }
+    .md\:p-10 {
+      padding: calc(var(--spacing) * 10);
     }
   }
   @media (width >= 64rem) {

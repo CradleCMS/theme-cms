@@ -93,7 +93,8 @@
           "key": "content-security-policy-usage",
           "type": "checkbox"
         }
-      ]
+      ],
+      "default": null
     },
     {
       "key": "colors",
@@ -322,7 +323,8 @@
           ],
           "type": "select"
         }
-      ]
+      ],
+      "default": null
     },
     {
       "key": "social_media",
@@ -360,7 +362,8 @@
           "key": "social_linkedin_url",
           "type": "text"
         }
-      ]
+      ],
+      "default": null
     },
     {
       "key": "header",
@@ -462,7 +465,8 @@
           "key": "headerTopURL",
           "type": "text"
         }
-      ]
+      ],
+      "default": null
     },
     {
       "key": "homepage",
@@ -905,7 +909,8 @@
           "key": "homepage_blog",
           "type": "blog"
         }
-      ]
+      ],
+      "default": null
     },
     {
       "key": "pages",
@@ -968,7 +973,8 @@
           "key": "contactDaisy",
           "type": "checkbox"
         }
-      ]
+      ],
+      "default": null
     },
     {
       "key": "closed",
@@ -1255,7 +1261,8 @@
           "key": "closed_button_link",
           "type": "text"
         }
-      ]
+      ],
+      "default": null
     },
     {
       "key": "footer",
@@ -1322,27 +1329,29 @@
           "type": "struct"
         },
         {
-          "caption": "Large button",
+          "caption": "Sign up dialog",
           "key": "footerButtonHeader",
           "type": "header"
         },
         {
-          "caption": "Show button",
-          "default": false,
-          "key": "footerButtonEnabled",
-          "type": "checkbox"
-        },
-        {
-          "caption": "URL",
-          "key": "footerButtonURL",
+          "caption": "Title",
+          "key": "footerButtonTitle",
           "type": "text"
         },
         {
-          "caption": "Button text",
+          "caption": "Text",
           "key": "footerButtonText",
-          "type": "text"
+          "type": "textarea"
+        },
+        {
+          "caption": "Form",
+          "default": "Select form",
+          "description": "Create under /Messages/Forms",
+          "key": "footerButtonForm",
+          "type": "form"
         }
-      ]
+      ],
+      "default": null
     },
     {
       "key": "branding",
@@ -1393,7 +1402,8 @@
           "key": "branding-theme-color-dark",
           "type": "color"
         }
-      ]
+      ],
+      "default": null
     }
   ]
 }

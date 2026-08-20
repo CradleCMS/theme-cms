@@ -13,7 +13,8 @@
       "contactDaisy": false,
       "css_dev_mode": "production",
       "daisy-theme": "light",
-      "footerButtonEnabled": false,
+      "footerButtonForm": "Select form",
+      "footerButtonText": "",
       "footerLinklists": [],
       "footer_about_shop": "Add a text here in the theme settings!",
       "footer_colors": "neutral",
@@ -35,7 +36,8 @@
       "header_cta_link_text": "Contact us",
       "header_otf_glass": "",
       "header_otf_section": true,
-      "header_otf_text": "Add content to front page in",
+      "header_otf_text": "Add content to front page in theme settings",
+      "header_otf_title": "Default theme",
       "heder_otf_height": "[70vh]",
       "homepage_page": {
         "entity": "page",
@@ -43,14 +45,15 @@
         "page": "contact",
         "parent": ""
       },
-      "homepage_page_show": true,
+      "homepage_page_show": false,
       "link_grid_items": [],
       "link_grid_show": false,
       "logoHeight": "40",
       "pageWidth": " max-w-[120ch]",
       "searchMode": "searchInput",
       "section_banner": [],
-      "section_banner_show": false
+      "section_banner_show": false,
+      "useLogoEnabled": false
     }
   }
 }

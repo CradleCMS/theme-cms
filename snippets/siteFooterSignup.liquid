@@ -1,0 +1,8 @@
+<dialog id="sign-up" class="pt-10 p-4 w-md max-w-full" closedby="any">
+    <button commandfor="sign-up" command="close" class="btn absolute btn-sm top-1 right-1 btn-ghost">Close</button>
+    <div class="p-6">
+        <h3 class="text-2xl text-center mb-2">{{ settings.footerButtonTitle | t }}</h3>
+        <p class="text-center text-md">{{ settings.footerButtonText | t }}</p>        
+    </div>
+    {% form settings.footerButtonForm.form %}{% endform %}
+</dialog>

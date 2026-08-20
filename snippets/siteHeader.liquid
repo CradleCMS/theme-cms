@@ -6,65 +6,68 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
 
 <div class="bg-{{ settings.header_colors | def: "base-200" }} text-{{ settings.header_colors }}-content {{ settings.general_shadow }} sticky top-0 w-[100vw] z-30">
     <a class="skip-link bg-primary text-primary-content link z-10 w-full p-4 text-center" href='#main-content'>{{ 'Skip to content' | t:'default' }}</a>
-    {% if settings.headerTopEnabled %}<div class="bg-primary text-primary-content p-2 text-center">{% if settings.headerTopURL %}<a href="{{ settings.headerTopURL }}">{% endif %}<p class="max-w-8xl mx-auto">{{ settings.headerTopText | t:'default' }}</p>{%if settings.headerTopURL %}</a>{% endif %}</div>{% endif %}
-    <div class="navbar max-w-8xl mx-auto container max-[550px]:flex-col-reverse justify-between">
-      <div class="navbar-start max-[550px]:w-full max-[550px]:place-content-start w-auto">
-        {% if navigation[mainNav].links.size > 0 %}
-        <div class="dropdown">
-          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-          </div>
-          <ul tabindex="0" class="menu dropdown-content mt-3 z-[1] p-2 shadow bg-primary text-primary-content rounded-box w-52">
-            {% for link in navigation[mainNav].links %}
-                {% if link.type == 'navigation' %}
-                 <li class="font-bold">
-                    <p class="uppercase">{{ link.title }}</p>
-                    <ul class="p-2">
-                        {% for childlink in navigation[link.handle].links %}
-                            <li><a href="{{ childlink | url }}">{{ childlink.title }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </li>           
-                {% else %}
-                <li class="font-bold" ><a href="{{ link | url }}">{{ link.title }}</a></li>
-                {% endif %}
-            {% endfor %}
-          </ul>
+    {% if settings.headerTopEnabled %}
+        <div class="bg-primary text-primary-content p-2 text-center">
+            {% if settings.headerTopURL %}<a href="{{ settings.headerTopURL }}">{% endif %}<p class="max-w-8xl mx-auto">{{ settings.headerTopText | t:'default' }}</p>{%if settings.headerTopURL %}</a>{% endif %}
         </div>
-        {% endif %}
-        {% if settings.useLogoEnabled %}
-            <a href="/">
-                <img src="/logo.png" height="{{ settings.logoHeight | def:40 }}" alt="{{ site.name }}" tabindex="0" class="p-2 logo">
-            </a>
-        {% else %}
-            <a href="/">
-                <h1>{{site.name}}</h1>
-            </a>
-        {% endif %}
-        
-        <ul class="menu menu-horizontal px-1 hidden lg:flex">
-            {% for link in navigation[mainNav].links %}
-                {% if link.type == 'navigation' and navigation[link.param].links.size > 0 %}
-                <li class="font-semibold text-base">
-                    <details>
-                        <summary>{{ link.title }}</summary>
-                          <ul class="p-2 mt-4 bg-base-200 text-base-content w-60 absolute shadow">
-                            {% for childlink in navigation[link.param].links %}
-                                <li class="font-semibold text-base child"><a href="{{ childlink | url }}">{{ childlink.title }}</a></li>
-                            {% endfor %}
-                          </ul>
-                    </details>
-                </li>
-                {% else %}
-                <li class="font-semibold text-base"><a href="{{ link | url }}">{{ link.title }}</a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-      </div>
-      <div class="navbar-end gap-4 max-[550px]:w-full max-[550px]:place-content-end w-auto">
-        <div class="p-2 pt-0 md:hidden">
-        <div class="max-w-8xl mx-auto container">
-            {% assign mode = settings.searchMode | default: 'searchInput' %}
+    {% endif %}
+    <div class="navbar max-w-8xl mx-auto container max-[550px]:flex-col-reverse justify-between">
+        <div class="navbar-start max-[550px]:w-full max-[550px]:place-content-start w-auto">
+            {% if navigation[mainNav].links.size > 0 %}
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </div>
+                    <ul tabindex="0" class="menu dropdown-content mt-3 z-[1] p-2 shadow bg-primary text-primary-content rounded-box w-52">
+                    {% for link in navigation[mainNav].links %}
+                        {% if link.type == 'navigation' %}
+                         <li class="font-bold">
+                            <p class="uppercase">{{ link.title }}</p>
+                            <ul class="p-2">
+                                {% for childlink in navigation[link.handle].links %}
+                                    <li><a href="{{ childlink | url }}">{{ childlink.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>           
+                        {% else %}
+                        <li class="font-bold" ><a href="{{ link | url }}">{{ link.title }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            {% if settings.useLogoEnabled %}
+                <a href="/">
+                    <img src="/logo.png" height="{{ settings.logoHeight | def:40 }}" alt="{{ site.name }}" tabindex="0" class="p-2 logo">
+                </a>
+            {% else %}
+                <a href="/">
+                    <h1>{{site.name}}</h1>
+                </a>
+            {% endif %}
+            <ul class="menu menu-horizontal px-1 hidden lg:flex">
+                {% for link in navigation[mainNav].links %}
+                    {% if link.type == 'navigation' and navigation[link.param].links.size > 0 %}
+                    <li class="font-semibold text-base">
+                        <details>
+                            <summary>{{ link.title }}</summary>
+                              <ul class="p-2 mt-4 bg-base-200 text-base-content w-60 absolute shadow">
+                                {% for childlink in navigation[link.param].links %}
+                                    <li class="font-semibold text-base child"><a href="{{ childlink | url }}">{{ childlink.title }}</a></li>
+                                {% endfor %}
+                              </ul>
+                        </details>
+                    </li>
+                    {% else %}
+                    <li class="font-semibold text-base"><a href="{{ link | url }}">{{ link.title }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="navbar-end gap-4 max-[550px]:w-full max-[550px]:place-content-end w-auto">
+            <div class="p-2 pt-0">
+            <div class="max-w-8xl mx-auto container">
+                {% assign mode = settings.searchMode | default: 'searchInput' %}
                 {% if mode == 'searchInput' %}
                   <div class="search-input">
                     <a-search>    
@@ -104,8 +107,8 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
                       </svg>
                     </a>
                 {% endif %} 
+            </div>
         </div>
-    </div>
         {% if site.langs.size > 1 %}
         <a-lang>
             <select name="lang" class="select bg-transparent w-24 btn-sm" value="{{lang}}">

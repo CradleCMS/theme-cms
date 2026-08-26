@@ -37,8 +37,8 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
                 </div>
             {% endif %}
             {% if settings.useLogoEnabled %}
-                <a href="/">
-                    <img src="/logo.png" height="{{ settings.logoHeight | def:40 }}" alt="{{ site.name }}" tabindex="0" class="p-2 logo">
+                <a href="/" class="logo">
+                    <img src="/logo.png" height="{{ settings.logoHeight | def:40 }}" alt="{{ site.name }}" tabindex="0" class="p-2">
                 </a>
             {% else %}
                 <a href="/">
@@ -118,8 +118,9 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
             </select>
         </a-lang>
         {% endif %}
-        {% if settings.header_cta_link_text | t:'default' %}
-        <a class="btn btn-primary btn" href="{{ settings.header_cta_link }}">{{ settings.header_cta_link_text | t:'default' }}</a>
+        {% if settings.headerPage != empty %}
+            {% let p = pages[settings.headerCtaPage] %}
+            <a class="btn btn-primary btn" href="{{ p | url }}">{{ settings.headerCtaText | def:'Contact us' | t:'default' }}</a>
         {% endif %}
       </div>
     </div>

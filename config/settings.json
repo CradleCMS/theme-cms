@@ -116,128 +116,130 @@
               "value": "light"
             },
             {
-              "caption": "Dark",
-              "value": "dark"
-            },
-            {
-              "caption": "Cupcake",
-              "value": "cupcake"
-            },
-            {
-              "caption": "Bumblebee",
-              "value": "bumblebee"
-            },
-            {
-              "caption": "Emerald",
-              "value": "emerald"
-            },
-            {
-              "caption": "Corporate",
-              "value": "corporate"
-            },
-            {
-              "caption": "Synthwave",
-              "value": "synthwave"
-            },
-            {
-              "caption": "Retro",
-              "value": "retro"
-            },
-            {
-              "caption": "Cyberpunk",
-              "value": "cyberpunk"
-            },
-            {
-              "caption": "Valentine",
-              "value": "valentine"
-            },
-            {
-              "caption": "Halloween",
-              "value": "halloween"
-            },
-            {
-              "caption": "Garden",
-              "value": "garden"
-            },
-            {
-              "caption": "Forest",
-              "value": "forest"
-            },
-            {
-              "caption": "Aqua",
-              "value": "aqua"
-            },
-            {
-              "caption": "Lofi",
-              "value": "lofi"
-            },
-            {
-              "caption": "Pastel",
-              "value": "pastel"
-            },
-            {
-              "caption": "Fantasy",
-              "value": "fantasy"
-            },
-            {
-              "caption": "Wireframe",
-              "value": "wireframe"
-            },
-            {
-              "caption": "Black",
-              "value": "black"
-            },
-            {
-              "caption": "Luxury",
-              "value": "luxury"
-            },
-            {
-              "caption": "Dracula",
-              "value": "dracula"
-            },
-            {
-              "caption": "cmyk",
-              "value": "cmyk"
+              "caption": "Acid",
+              "value": "acid"
             },
             {
               "caption": "Autumn",
               "value": "autumn"
             },
             {
-              "caption": "Business",
-              "value": "business"
+              "caption": "Bumblebee",
+              "value": "bumblebee"
             },
             {
-              "caption": "Acid",
-              "value": "acid"
+              "caption": "cmyk",
+              "value": "cmyk"
+            },
+            {
+              "caption": "Corporate",
+              "value": "corporate"
+            },
+            {
+              "caption": "Cupcake",
+              "value": "cupcake"
+            },
+            {
+              "caption": "Emerald",
+              "value": "emerald"
+            },
+            {
+              "caption": "Fantasy",
+              "value": "fantasy"
+            },
+            {
+              "caption": "Garden",
+              "value": "garden"
             },
             {
               "caption": "Lemonade",
               "value": "lemonade"
             },
             {
-              "caption": "Night",
-              "value": "night"
-            },
-            {
-              "caption": "Coffee",
-              "value": "coffee"
-            },
-            {
-              "caption": "Winter",
-              "value": "winter"
-            },
-            {
-              "caption": "Dim",
-              "value": "dim"
+              "caption": "Lofi",
+              "value": "lofi"
             },
             {
               "caption": "Nord",
               "value": "nord"
             },
             {
+              "caption": "Pastel",
+              "value": "pastel"
+            },
+            {
+              "caption": "Winter",
+              "value": "winter"
+            },
+            {
+              "caption": "Wireframe",
+              "value": "wireframe"
+            },
+            {},
+            {
+              "caption": "Dark",
+              "value": "dark"
+            },
+            {
+              "caption": "Black",
+              "value": "black"
+            },
+            {
+              "caption": "Business",
+              "value": "business"
+            },
+            {
+              "caption": "Coffee",
+              "value": "coffee"
+            },
+            {
+              "caption": "Dim",
+              "value": "dim"
+            },
+            {
+              "caption": "Dracula",
+              "value": "dracula"
+            },
+            {
+              "caption": "Forest",
+              "value": "forest"
+            },
+            {
+              "caption": "Halloween",
+              "value": "halloween"
+            },
+            {
+              "caption": "Luxury",
+              "value": "luxury"
+            },
+            {
+              "caption": "Night",
+              "value": "night"
+            },
+            {
               "caption": "Sunset",
               "value": "sunset"
+            },
+            {},
+            {
+              "caption": "Aqua",
+              "value": "aqua"
+            },
+            {
+              "caption": "Cyberpunk",
+              "value": "cyberpunk"
+            },
+            {
+              "caption": "Retro",
+              "value": "retro"
+            },
+            {
+              "caption": "Synthwave",
+              "value": "synthwave"
+            },
+            {
+              "caption": "Valentine",
+              "value": "valentine"
             }
           ],
           "type": "select"
@@ -291,37 +293,6 @@
             }
           ],
           "type": "select"
-        },
-        {
-          "caption": "Footer style",
-          "key": "footer_colors",
-          "options": [
-            {
-              "caption": "Lightest",
-              "value": "base-100"
-            },
-            {
-              "caption": "Darker",
-              "value": "base-200"
-            },
-            {
-              "caption": "Darkest",
-              "value": "base-300"
-            },
-            {
-              "caption": "Secondary",
-              "value": "secondary"
-            },
-            {
-              "caption": "Accent",
-              "value": "accent"
-            },
-            {
-              "caption": "Neutral",
-              "value": "neutral"
-            }
-          ],
-          "type": "select"
         }
       ],
       "default": null
@@ -361,6 +332,11 @@
           "caption": "LinkedIn URL",
           "key": "social_linkedin_url",
           "type": "text"
+        },
+        {
+          "caption": "Pinterest URL",
+          "key": "social_pinterest_url",
+          "type": "text"
         }
       ],
       "default": null
@@ -371,8 +347,14 @@
       "caption": "Header",
       "settings": [
         {
+          "caption": "Logo",
+          "key": "headerLogo",
+          "type": "header"
+        },
+        {
           "caption": "Use Logo",
           "default": false,
+          "description": "Logo is added in Site settings.",
           "key": "useLogoEnabled",
           "type": "checkbox"
         },
@@ -400,6 +382,11 @@
           "type": "select"
         },
         {
+          "caption": "Search box",
+          "key": "headerSearch",
+          "type": "header"
+        },
+        {
           "caption": "Search Mode",
           "key": "searchMode",
           "options": [
@@ -419,16 +406,16 @@
           "type": "select"
         },
         {
+          "caption": "Links",
+          "key": "headerLinks",
+          "type": "header"
+        },
+        {
           "caption": "Main navigation",
           "default": "Select linklist",
           "description": "Setup linklists under \u003ca href='/admin/navigation'\u003eNavigation\u003c/a\u003e",
           "key": "headerLinklist",
           "type": "linklist"
-        },
-        {
-          "caption": "Show search button",
-          "key": "headShowSearch",
-          "type": "checkbox"
         },
         {
           "caption": "Header button",
@@ -437,13 +424,14 @@
         },
         {
           "caption": "Button text",
-          "key": "header_cta_link_text",
+          "key": "headerCtaText",
           "type": "text"
         },
         {
-          "caption": "Add link",
-          "key": "header_cta_link",
-          "type": "text"
+          "caption": "Add page",
+          "default": "Select page",
+          "key": "headerCtaPage",
+          "type": "page"
         },
         {
           "caption": "Top banner",
@@ -1271,21 +1259,42 @@
       "caption": "Footer",
       "settings": [
         {
-          "caption": "About us text",
-          "key": "footer_about_shop",
-          "rows": 6,
-          "type": "textarea"
+          "caption": "Color",
+          "key": "footerColorHeader",
+          "type": "header"
         },
         {
-          "caption": "Use image in footer",
-          "default": false,
-          "key": "footer_image",
-          "type": "checkbox"
+          "caption": "Footer style",
+          "key": "footer_colors",
+          "options": [
+            {
+              "caption": "Base",
+              "value": "base-100"
+            },
+            {
+              "caption": "Darker base",
+              "value": "base-200"
+            },
+            {
+              "caption": "Darkest base",
+              "value": "base-300"
+            },
+            {
+              "caption": "Alternative",
+              "value": "neutral"
+            }
+          ],
+          "type": "select"
         },
         {
-          "caption": "Foreground image",
+          "caption": "About section",
+          "key": "footerAboutHeader",
+          "type": "header"
+        },
+        {
+          "caption": "Image",
           "description": "Format: png-file, minimum 450px wide",
-          "key": "footer_image_src",
+          "key": "footerImage",
           "type": "image"
         },
         {
@@ -1294,21 +1303,22 @@
           "type": "text"
         },
         {
+          "caption": "Text",
+          "key": "footer_about_shop",
+          "rows": 6,
+          "type": "textarea"
+        },
+        {
           "caption": "Show social media links",
           "default": false,
+          "description": "Add the links under Social media found here in theme settings",
           "key": "footer_social_enable",
           "type": "checkbox"
         },
         {
-          "caption": "Quick links",
+          "caption": "Link lists",
           "key": "quick_links",
           "type": "header"
-        },
-        {
-          "caption": "Show links",
-          "default": false,
-          "key": "footer_quicklinks_enable",
-          "type": "checkbox"
         },
         {
           "caption": "Select link lists",
@@ -1350,58 +1360,6 @@
           "description": "Create under /Messages/Forms",
           "key": "footerButtonForm",
           "type": "form"
-        }
-      ],
-      "default": null
-    },
-    {
-      "key": "branding",
-      "type": "section",
-      "caption": "Branding",
-      "settings": [
-        {
-          "caption": "Logo",
-          "key": "logo_options",
-          "type": "header"
-        },
-        {
-          "caption": "Custom Logo",
-          "description": "A logo in png format with max-height 50px and max-width 200px.",
-          "key": "logo_image",
-          "type": "image"
-        },
-        {
-          "caption": "Favicons",
-          "key": "favicon",
-          "type": "header"
-        },
-        {
-          "caption": "Enable custom favicon",
-          "default": false,
-          "key": "favicon_enable",
-          "type": "checkbox"
-        },
-        {
-          "caption": "Favicon svg-type",
-          "description": "Format: An SVG-file with light and dark version for modern browsers",
-          "key": "favicon_svg",
-          "type": "asset"
-        },
-        {
-          "caption": "Theme colors",
-          "description": "Suggested colors for user agents.",
-          "key": "theme-color",
-          "type": "header"
-        },
-        {
-          "caption": "Theme color (light)",
-          "key": "branding-theme-color-light",
-          "type": "color"
-        },
-        {
-          "caption": "Theme color (dark)",
-          "key": "branding-theme-color-dark",
-          "type": "color"
         }
       ],
       "default": null

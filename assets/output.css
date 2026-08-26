@@ -2018,6 +2018,31 @@
       cursor: not-allowed;
     }
   }
+  @layer daisyui.l1.l2 {
+    .btn-active {
+      --btn-bg: var(--btn-color, var(--color-base-200));
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .btn-active {
+        --btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base-200)), #000 5%);
+      }
+    }
+    .btn-active {
+      color: var(--btn-fg, var(--color-base-content));
+      --btn-border: var(--btn-color, var(--color-base-200));
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .btn-active {
+        --btn-border: color-mix(in oklab, var(--btn-color, var(--color-base-200)), #000 7%);
+      }
+    }
+    .btn-active {
+      --btn-border-style: solid;
+      --btn-inset: 0 0 0 0 oklch(0% 0 0/0);
+      --btn-shadow: 0 0 0 0 oklch(0% 0 0/0);
+      isolation: isolate;
+    }
+  }
   .join {
     display: inline-flex;
     align-items: stretch;
@@ -3155,6 +3180,9 @@
   .h-5 {
     height: calc(var(--spacing) * 5);
   }
+  .h-full {
+    height: 100%;
+  }
   .max-h-40 {
     max-height: calc(var(--spacing) * 40);
   }
@@ -3215,9 +3243,6 @@
   .w-60 {
     width: calc(var(--spacing) * 60);
   }
-  .w-80 {
-    width: calc(var(--spacing) * 80);
-  }
   .w-\[100vw\] {
     width: 100vw;
   }
@@ -3229,9 +3254,6 @@
   }
   .w-md {
     width: var(--container-md);
-  }
-  .max-w-1\/3 {
-    max-width: calc(1 / 3 * 100%);
   }
   .max-w-\[45rem\] {
     max-width: 45rem;
@@ -3339,9 +3361,6 @@
   .items-center {
     align-items: center;
   }
-  .items-start {
-    align-items: flex-start;
-  }
   .justify-between {
     justify-content: space-between;
   }
@@ -3353,6 +3372,12 @@
   }
   .justify-items-center {
     justify-items: center;
+  }
+  .gap-1 {
+    gap: var(--spacing);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
@@ -3391,6 +3416,26 @@
     border-width: 1px;
   }
   @layer daisyui.l1.l2 {
+    .badge-soft {
+      color: var(--badge-color, var(--color-base-content));
+      background-color: var(--badge-color, var(--color-base-content));
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .badge-soft {
+        background-color: color-mix( in oklab, var(--badge-color, var(--color-base-content)) 8%, var(--color-base-100) );
+      }
+    }
+    .badge-soft {
+      border-color: var(--badge-color, var(--color-base-content));
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .badge-soft {
+        border-color: color-mix( in oklab, var(--badge-color, var(--color-base-content)) 10%, var(--color-base-100) );
+      }
+    }
+    .badge-soft {
+      background-image: none;
+    }
     .input-ghost {
       background-color: transparent;
       box-shadow: none;
@@ -3407,12 +3452,6 @@
       color: var(--color-base-content);
       border-color: #0000;
       box-shadow: none;
-    }
-    .divider-accent:before {
-      background-color: var(--color-accent);
-    }
-    .divider-accent:after {
-      background-color: var(--color-accent);
     }
   }
   .bg-accent {
@@ -3491,14 +3530,8 @@
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
-  .px-3 {
-    padding-inline: calc(var(--spacing) * 3);
-  }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
-  }
-  .py-2 {
-    padding-block: calc(var(--spacing) * 2);
   }
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
@@ -3785,9 +3818,6 @@
     .lg\:ml-4 {
       margin-left: calc(var(--spacing) * 4);
     }
-    .lg\:block {
-      display: block;
-    }
     .lg\:flex {
       display: flex;
     }
@@ -3796,6 +3826,9 @@
     }
     .lg\:w-1\/3 {
       width: calc(1 / 3 * 100%);
+    }
+    .lg\:w-1\/4 {
+      width: calc(1 / 4 * 100%);
     }
     .lg\:w-2\/6 {
       width: calc(2 / 6 * 100%);

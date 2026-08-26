@@ -1,27 +1,32 @@
 <div class="w-1/2 lg:w-full">
     {% if blog.articleTags.size > 0 %}
-        <h4 class="mb-4 text-lg">{{ 'Related topics' | t }}</h4>
-        <div class="flex gap-2 flex-wrap">
+        <h4 class="mt-2 mb-2 text-lg">{{ 'Related topics' | t }}</h4>
+        <div class="flex gap-2 flex-wrap mb-6">
      	    {% for tag in blog.articleTags  %}
-                <a class="badge badge-accent badge-soft" href="{{ blogs[article.blog] | url}}?tags={{ tag }}">{{ tag }}</a>
+                <a class="badge badge-accent badge-soft" <a href="{{ blog | url }}?tags={{ currentTags | append:tag | join:'+' }}">{{ tag }}</a>
             {% endfor %}
         </div>        
     {% endif %}
-    <h4 class="mt-2 mb-4 text-lg">{{ 'Recent Articles' | t }}</h4>
+    <h4 class="mt-2 mb-2 text-lg">{{ 'Recent Articles' | t }}</h4>
     {% assign current_article_id = article.id %}
-    {% for article in blogs[blog.id].articles limit:6 %}
-        <p class="mb-4 flex flex-col">
-            <time class="text-xs" pubdate datetime="{{ article.publishAt | date }}">{{ article.publishAt | date }}</time>  
-            {% if current_article_id == article.id %}
-                <span class="text-md">{{ article.title }}</span>
-            {% else %}
-                <a class="link text-md font-bold" href="{{ article | url }}">{{ article.title }}</a>
-            {% endif %}
-        </p>
-    {% endfor %}
+    <div class="mb-6">
+        {% for article in blogs[blog.id].articles limit:6 %}
+            <p class="flex flex-col mb-2">
+                <time class="text-xs" pubdate datetime="{{ article.publishAt | date }}">{{ article.publishAt | date }}</time>  
+                {% if current_article_id == article.id %}
+                    <span class="text-md">{{ article.title }}</span>
+                {% else %}
+                    <a class="link text-md font-bold" href="{{ article | url }}">{{ article.title }}</a>
+                {% endif %}
+            </p>
+        {% endfor %}        
+    </div>
     {% if settings.blogFeeds %}
-        <h4 class="mt-8 mb-2 text-lg">{{ 'Stay up to date' | t }}</h4>
-        <small class="feeds"><a class="link" href="/blogs/{{ blog.handle }}/rss.xml" target="_blank" alt="RSS-feed">{{ 'RSS feed' | t }}</a> {{ 'and' | t }} <a class="link" href="/blogs/{{ blog.handle }}/atom.xml" target="_blank" alt="Atom-feed">{{ "Atom feed" | t}}</a></small>
+        <h4 class="mt-2 mb-2 text-lg">{{ 'Stay up to date' | t }}</h4>
+        <small class="flex gap-1 mb-6">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" lass="h-5 w-5 opacity-50" stroke="currentColor" fill="transparent" width="20" height="20" viewBox="-3 0 19 19" xmlns="http://www.w3.org/2000/svg"><path d="M.926 12.818a1.403 1.403 0 1 1 0 1.984 1.402 1.402 0 0 1 0-1.984zm10.531 2.357a1.03 1.03 0 0 1-1.029-1.03 8.775 8.775 0 0 0-.694-3.438A8.826 8.826 0 0 0 1.591 5.31a1.03 1.03 0 1 1 0-2.059 10.817 10.817 0 0 1 4.24.857 10.893 10.893 0 0 1 3.463 2.334 10.867 10.867 0 0 1 3.19 7.703 1.027 1.027 0 0 1-1.027 1.029zm-4.538 0a1.03 1.03 0 0 1-1.029-1.03 4.297 4.297 0 0 0-4.299-4.298 1.03 1.03 0 0 1 0-2.059 6.362 6.362 0 0 1 5.857 3.883 6.298 6.298 0 0 1 .5 2.475 1.03 1.03 0 0 1-1.029 1.029z"/></svg>
+            <a class="link" href="/blogs/{{ blog.handle }}/rss.xml" target="_blank" alt="RSS-feed">{{ 'RSS feed' | t }}</a> {{ 'and' | t }} <a class="link" href="/blogs/{{ blog.handle }}/atom.xml" target="_blank" alt="Atom-feed">{{ "Atom feed" | t}}</a>
+        </small>
     {% endif %}
 </div>
 

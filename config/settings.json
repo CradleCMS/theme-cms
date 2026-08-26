@@ -457,6 +457,117 @@
       "default": null
     },
     {
+      "key": "footer",
+      "type": "section",
+      "caption": "Footer",
+      "settings": [
+        {
+          "caption": "Color",
+          "key": "footerColorHeader",
+          "type": "header"
+        },
+        {
+          "caption": "Footer style",
+          "key": "footer_colors",
+          "options": [
+            {
+              "caption": "Base",
+              "value": "base-100"
+            },
+            {
+              "caption": "Darker base",
+              "value": "base-200"
+            },
+            {
+              "caption": "Darkest base",
+              "value": "base-300"
+            },
+            {
+              "caption": "Alternative",
+              "value": "neutral"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "caption": "About section",
+          "key": "footerAboutHeader",
+          "type": "header"
+        },
+        {
+          "caption": "Image",
+          "description": "Format: png-file, minimum 450px wide",
+          "key": "footerImage",
+          "type": "image"
+        },
+        {
+          "caption": "Image alt text",
+          "key": "footer_image_alt",
+          "type": "text"
+        },
+        {
+          "caption": "Text",
+          "key": "footer_about_shop",
+          "rows": 6,
+          "type": "textarea"
+        },
+        {
+          "caption": "Show social media links",
+          "default": false,
+          "description": "Add the links under Social media found here in theme settings",
+          "key": "footer_social_enable",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Link lists",
+          "key": "quick_links",
+          "type": "header"
+        },
+        {
+          "caption": "Select link lists",
+          "description": "Create link-lists under Navigation",
+          "key": "footerLinklists",
+          "settings": [
+            {
+              "caption": "Title",
+              "key": "title",
+              "type": "text"
+            },
+            {
+              "caption": "Link list",
+              "default": "footer",
+              "key": "linkList",
+              "type": "linklist"
+            }
+          ],
+          "type": "struct"
+        },
+        {
+          "caption": "Sign up dialog",
+          "key": "footerButtonHeader",
+          "type": "header"
+        },
+        {
+          "caption": "Title",
+          "key": "footerButtonTitle",
+          "type": "text"
+        },
+        {
+          "caption": "Text",
+          "key": "footerButtonText",
+          "type": "textarea"
+        },
+        {
+          "caption": "Form",
+          "default": "Select form",
+          "description": "Create under /Messages/Forms",
+          "key": "footerButtonForm",
+          "type": "form"
+        }
+      ],
+      "default": null
+    },
+    {
       "key": "homepage",
       "type": "section",
       "caption": "Homepage",
@@ -524,20 +635,24 @@
               "value": ""
             },
             {
-              "caption": "Glass",
-              "value": " glass"
+              "caption": "Glass (dark background)",
+              "value": " glass text-neutral-content"
+            },
+            {
+              "caption": "Glass (light background)",
+              "value": " glass text-base-content"
             },
             {
               "caption": "Theme base color",
-              "value": " bg-base-100"
+              "value": " bg-base-100 text-base-content"
             },
             {
               "caption": "Darker base color",
-              "value": " bg-base-200"
+              "value": " bg-base-200 text-base-content"
             },
             {
               "caption": "Darkest base color",
-              "value": " bg-base-300"
+              "value": " bg-base-300 text-base-content"
             }
           ],
           "type": "select"
@@ -563,11 +678,6 @@
           "type": "text"
         },
         {
-          "caption": "Use foreground image",
-          "key": "header_otf_fgimage_use",
-          "type": "checkbox"
-        },
-        {
           "caption": "Foreground image",
           "description": "Minimum 450px wide, jpg or png format",
           "key": "header_otf_fgimage",
@@ -578,6 +688,17 @@
           "description": "Recommendation: minimum 1024px x 1024px, jpg-format",
           "key": "header_otf_image",
           "type": "image"
+        },
+        {
+          "caption": "Background video",
+          "description": "Recommendation: minimum 1024px x 1024px, mp4-format",
+          "key": "headerOtfVideo",
+          "type": "video"
+        },
+        {
+          "caption": "Use page content",
+          "key": "content",
+          "type": "header"
         },
         {
           "caption": "Use page content",
@@ -991,117 +1112,6 @@
           "description": "Shows icons for RSS and atom feed links",
           "key": "blogFeeds",
           "type": "checkbox"
-        }
-      ],
-      "default": null
-    },
-    {
-      "key": "footer",
-      "type": "section",
-      "caption": "Footer",
-      "settings": [
-        {
-          "caption": "Color",
-          "key": "footerColorHeader",
-          "type": "header"
-        },
-        {
-          "caption": "Footer style",
-          "key": "footer_colors",
-          "options": [
-            {
-              "caption": "Base",
-              "value": "base-100"
-            },
-            {
-              "caption": "Darker base",
-              "value": "base-200"
-            },
-            {
-              "caption": "Darkest base",
-              "value": "base-300"
-            },
-            {
-              "caption": "Alternative",
-              "value": "neutral"
-            }
-          ],
-          "type": "select"
-        },
-        {
-          "caption": "About section",
-          "key": "footerAboutHeader",
-          "type": "header"
-        },
-        {
-          "caption": "Image",
-          "description": "Format: png-file, minimum 450px wide",
-          "key": "footerImage",
-          "type": "image"
-        },
-        {
-          "caption": "Image alt text",
-          "key": "footer_image_alt",
-          "type": "text"
-        },
-        {
-          "caption": "Text",
-          "key": "footer_about_shop",
-          "rows": 6,
-          "type": "textarea"
-        },
-        {
-          "caption": "Show social media links",
-          "default": false,
-          "description": "Add the links under Social media found here in theme settings",
-          "key": "footer_social_enable",
-          "type": "checkbox"
-        },
-        {
-          "caption": "Link lists",
-          "key": "quick_links",
-          "type": "header"
-        },
-        {
-          "caption": "Select link lists",
-          "description": "Create link-lists under Navigation",
-          "key": "footerLinklists",
-          "settings": [
-            {
-              "caption": "Title",
-              "key": "title",
-              "type": "text"
-            },
-            {
-              "caption": "Link list",
-              "default": "footer",
-              "key": "linkList",
-              "type": "linklist"
-            }
-          ],
-          "type": "struct"
-        },
-        {
-          "caption": "Sign up dialog",
-          "key": "footerButtonHeader",
-          "type": "header"
-        },
-        {
-          "caption": "Title",
-          "key": "footerButtonTitle",
-          "type": "text"
-        },
-        {
-          "caption": "Text",
-          "key": "footerButtonText",
-          "type": "textarea"
-        },
-        {
-          "caption": "Form",
-          "default": "Select form",
-          "description": "Create under /Messages/Forms",
-          "key": "footerButtonForm",
-          "type": "form"
         }
       ],
       "default": null

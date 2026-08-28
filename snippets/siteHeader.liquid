@@ -14,27 +14,7 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
     <div class="navbar max-w-8xl mx-auto container max-[550px]:flex-col-reverse justify-between">
         <div class="navbar-start max-[550px]:w-full max-[550px]:place-content-start w-auto">
             {% if navigation[mainNav].links.size > 0 %}
-                <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                    </div>
-                    <ul tabindex="0" class="menu dropdown-content mt-3 z-[1] p-2 shadow bg-primary text-primary-content rounded-box w-52">
-                    {% for link in navigation[mainNav].links %}
-                        {% if link.type == 'navigation' %}
-                         <li class="font-bold">
-                            <p class="uppercase">{{ link.title }}</p>
-                            <ul class="p-2">
-                                {% for childlink in navigation[link.handle].links %}
-                                    <li><a href="{{ childlink | url }}">{{ childlink.title }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </li>           
-                        {% else %}
-                        <li class="font-bold" ><a href="{{ link | url }}">{{ link.title }}</a></li>
-                        {% endif %}
-                    {% endfor %}
-                    </ul>
-                </div>
+                {% include 'siteHeaderHam' %}
             {% endif %}
             {% if settings.useLogoEnabled %}
                 <a href="/" class="logo">
@@ -69,26 +49,26 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
             <div class="max-w-8xl mx-auto container">
                 {% assign mode = settings.searchMode | default: 'searchInput' %}
                 {% if mode == 'searchInput' %}
-                  <div class="search-input">
-                    <a-search>    
-                        <label class="input input-sm input-ghost px-2 focus-within:outline-none w-full">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-5 w-5 opacity-50"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z">
-                                </path>
-                          </svg>    
-                            <input type="search" name="search" placeholder="{{ 'Search' | t:'search' }}" class="text-sm" />
-                        </label>
-                    </a-search>
-                  </div>
+                    <div class="search-input">
+                        <a-search>    
+                            <label class="input input-sm input-ghost px-2 focus-within:outline-none w-full">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 opacity-50"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z">
+                                    </path>
+                                </svg>    
+                                <input type="search" name="search" placeholder="{{ 'Search' | t:'search' }}" class="text-sm" />
+                            </label>
+                        </a-search>
+                    </div>
                 {% elsif mode == "hidden" %}
 
                 {% else %}
@@ -111,7 +91,7 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
         </div>
         {% if site.langs.size > 1 %}
         <a-lang>
-            <select name="lang" class="select bg-transparent w-24 btn-sm" value="{{lang}}">
+            <select name="lang" class="select bg-transparent w-24 btn-sm hidden lg:inline" value="{{lang}}">
                 {% for l in site.langs | keys | sort %}
                 <option value="{{ l }}" {% if l == lang %}selected{% endif %}>{{languages[l] | t:'default' }}</option>
                 {% endfor %}

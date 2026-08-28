@@ -1,0 +1,76 @@
+<button id="open-hamburger" command="show-modal" commandfor="hamburger" class="btn btn-ghost btn-primary lg:hidden">          
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+</button>
+<dialog id="hamburger" class="pt-10 p-6 w-sm max-w-[90%] bg-base-100 text-base-content h-[100vh] border-r top-0" closedby="any">
+    <button id="close-hamburger" commandfor="hamburger" command="close" class="btn absolute btn-sm btn-primary top-1 right-1 btn-ghost">{{ 'Close' | t }}</button>
+    <div class="">
+    <ul class="space-y-4 mb-8">
+      {% for link in navigation[mainNav].links %}
+        {% if link.type == 'navigation' %}
+          <li class="font-sm">
+            <details>
+              <summary class="uppercase cursor-pointer py-2">{{ link.title }}</summary>
+              <ul class="pl-3 space-y-1">
+                {% for childlink in navigation[link.handle].links %}
+                  {% if childlink.type == 'navigation' %}
+                    <li>
+                      <details>
+                        <summary class="cursor-pointer">{{ childlink.title }}</summary>
+                        <ul class="pl-4 space-y-1">
+                          {% for subchild in navigation[childlink.handle].links %}
+                            <li><a href="{{ subchild | url }}">{{ subchild.title }}</a></li>
+                          {% endfor %}
+                        </ul>
+                      </details>
+                    </li>
+                  {% else %}
+                    <li><a href="{{ childlink | url }}">{{ childlink.title }}</a></li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </details>
+          </li>
+        {% else %}
+          <li class="font-sm"><a href="{{ link | url }}">{{ link.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    {% if site.langs.size > 1 %}
+      <a-lang class="block mt-4">
+        <select name="lang" class="select w-full">
+          {% for l in site.langs | keys | sort %}
+            <option value="{{ l }}" {% if l == lang %}selected{% endif %}>
+              {{ languages[l] | t:'default' }}
+            </option>
+          {% endfor %}
+        </select>
+      </a-lang>
+    {% endif %}
+    </div>
+</dialog>
+<style>
+#hamburger {
+    margin: 0;
+    box-sizing: content-box;
+}
+</style>
+<script>
+const hamburger = document.getElementById("hamburger");
+const openHamburger = document.getElementById("open-hamburger");
+const closeHamburger = document.getElementById("close-hamburger");
+
+// Open button opens a modal dialog
+openHamburger.addEventListener("click", () => {
+  hamburger.showModal();
+});
+
+// Close button closes the dialog box
+closeHamburger.addEventListener("click", () => {
+  hamburger.close();
+});    
+</script>
+
+

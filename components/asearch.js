@@ -25,7 +25,6 @@ searchCSS.replaceSync(`
     background: var(--color-base-100);
     border: var(--border) solid var(--color-base-300);
     border-top: none;
-    border-radius: 0 0 var(--radius-selector) var(--radius-selector);
     overflow-y: auto;
     z-index: 1000;
     text-align: right;
@@ -34,6 +33,10 @@ searchCSS.replaceSync(`
 }
 .asearch.show {
     display: block;
+    width: 100%;
+    border: 1px solid var(--color-base-content);
+    border-top: none;
+    box-sizing: border-box;
 }
 .asearch .item {
     margin-bottom: 0.25em;
@@ -50,9 +53,8 @@ searchCSS.replaceSync(`
     color: inherit;
 }
 .asearch .item:hover,
-.asearch .item.focused {
+.asearch .item.focus {
     background: var(--color-base-200);
-    outline: 1px solid var(--color-base-300);
 }
 .asearch .item img {
     width: 2.25em;
@@ -218,7 +220,7 @@ class AutoSearch extends HTMLElement {
         let el = document.createElement("div");
         el.className = "asearch";
         el.setAttribute("role", "listbox");
-        el.style.top = this.#target.getBoundingClientRect().height + "px";
+        el.style.top = this.#target.getBoundingClientRect().height - 2 + "px";
         this.#shadow.appendChild(el);
         this.#el = el;
     }

@@ -11,8 +11,8 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
             {% if settings.headerTopURL %}<a href="{{ settings.headerTopURL }}">{% endif %}<p class="max-w-8xl mx-auto">{{ settings.headerTopText | t:'default' }}</p>{%if settings.headerTopURL %}</a>{% endif %}
         </div>
     {% endif %}
-    <div class="navbar max-w-8xl mx-auto container max-[550px]:flex-col-reverse justify-between">
-        <div class="navbar-start max-[550px]:w-full max-[550px]:place-content-start w-auto">
+    <div class="navbar max-w-8xl mx-auto container max-[500px]:flex-wrap-reverse justify-between">
+        <div class="navbar-start max-[500px]:w-full max-[500px]:place-content-start w-auto grow">
             {% if navigation[mainNav].links.size > 0 %}
                 {% include 'siteHeaderHam' %}
             {% endif %}
@@ -44,64 +44,58 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
                 {% endfor %}
             </ul>
         </div>
-        <div class="navbar-end gap-4 max-[550px]:w-full max-[550px]:place-content-end w-auto">
-            <div class="p-2 pt-0">
-            <div class="max-w-8xl mx-auto container">
-                {% assign mode = settings.searchMode | default: 'searchInput' %}
-                {% if mode == 'searchInput' %}
-                    <div class="search-input">
-                        <a-search>    
-                            <label class="input input-sm input-ghost px-2 focus-within:outline-none w-full">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="h-5 w-5 opacity-50"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      stroke-width="2"
-                                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z">
-                                    </path>
-                                </svg>    
-                                <input type="search" name="search" placeholder="{{ 'Search' | t:'search' }}" class="text-sm" />
-                            </label>
-                        </a-search>
-                    </div>
-                {% elsif mode == "hidden" %}
+        <div class="navbar-end gap-4 max-[500px]:w-full max-[500px]:place-content-end w-auto shrink">
+            {% assign mode = settings.searchMode | default: 'searchInput' %}
+            {% if mode == 'searchInput' %}
+                <a-search lang="{{ lang }}" include="pages,articles" class="max-[500px]:w-full">    
+                    <label class="input input-sm input-transparent px-2 focus-within:outline-none w-full rounded-md">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5 opacity-50"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z">
+                            </path>
+                        </svg>    
+                        <input type="search" name="search" placeholder="{{ 'Search' | t:'search' }}" class="text-sm" />
+                    </label>
+                </a-search>
+            {% elsif mode == "hidden" %}
 
-                {% else %}
-                    <a class="btn btn-ghost btn-circle btn-sm" href="/search">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                      </svg>
-                    </a>
-                {% endif %} 
-            </div>
+            {% else %}
+                <a class="btn btn-ghost btn-circle btn-sm" href="/search">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </a>
+            {% endif %} 
+            {% if site.langs.size > 1 %}
+            <a-lang class="hidden lg:inline">
+                <select name="lang" class="select bg-transparent w-24 btn-sm" value="{{lang}}">
+                    {% for l in site.langs | keys | sort %}
+                    <option value="{{ l }}" {% if l == lang %}selected{% endif %}>{{languages[l] | t:'default' }}</option>
+                    {% endfor %}
+                </select>
+            </a-lang>
+            {% endif %}
+            {% if settings.headerPage != empty %}
+                {% let p = pages[settings.headerCtaPage] %}
+                <a class="btn btn-primary btn" href="{{ p | url }}">{{ settings.headerCtaText | def:'Contact us' | t:'default' }}</a>
+            {% endif %}
         </div>
-        {% if site.langs.size > 1 %}
-        <a-lang>
-            <select name="lang" class="select bg-transparent w-24 btn-sm hidden lg:inline" value="{{lang}}">
-                {% for l in site.langs | keys | sort %}
-                <option value="{{ l }}" {% if l == lang %}selected{% endif %}>{{languages[l] | t:'default' }}</option>
-                {% endfor %}
-            </select>
-        </a-lang>
-        {% endif %}
-        {% if settings.headerPage != empty %}
-            {% let p = pages[settings.headerCtaPage] %}
-            <a class="btn btn-primary btn" href="{{ p | url }}">{{ settings.headerCtaText | def:'Contact us' | t:'default' }}</a>
-        {% endif %}
-      </div>
     </div>
 </div>

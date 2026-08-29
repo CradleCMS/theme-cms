@@ -1068,6 +1068,12 @@
           "type": "select"
         },
         {
+          "caption": "Header image",
+          "description": "Use page image as a background in header",
+          "key": "pageImage",
+          "type": "checkbox"
+        },
+        {
           "caption": "Contact page",
           "key": "pageContact",
           "type": "header"
@@ -1117,174 +1123,195 @@
       "default": null
     },
     {
-      "key": "closed",
+      "key": "forms",
       "type": "section",
-      "caption": "Closed site",
+      "caption": "Forms",
       "settings": [
         {
-          "caption": "Daisy UI Theme",
-          "key": "closed-header-color-themes",
+          "caption": "Background color",
+          "key": "formColor",
+          "options": [
+            {
+              "caption": "Base",
+              "value": "--color-base-100"
+            },
+            {
+              "caption": "Darker",
+              "value": "--color-base-200"
+            },
+            {
+              "caption": "Darkest",
+              "value": "--color-base-300"
+            }
+          ],
+          "type": "select"
+        }
+      ],
+      "default": null
+    },
+    {
+      "key": "restricted",
+      "type": "section",
+      "caption": "Closed site",
+      "description": "These settings are used when the site is closed.",
+      "settings": [
+        {
+          "caption": "Color Theme",
+          "key": "closedHeaderColorThemes",
           "type": "header"
         },
         {
           "caption": "Select preset",
-          "description": "Go to \u003ca href='https://daisyui.com/docs/themes/' target='_blank'\u003ehttps://daisyui.com/docs/themes/\u003c/a\u003e to learn more",
-          "key": "closed-daisy-theme",
+          "key": "closedDaisyTheme",
           "options": [
             {
               "caption": "Light",
               "value": "light"
             },
             {
-              "caption": "Dark",
-              "value": "dark"
-            },
-            {
-              "caption": "Cupcake",
-              "value": "cupcake"
-            },
-            {
-              "caption": "Bumblebee",
-              "value": "bumblebee"
-            },
-            {
-              "caption": "Emerald",
-              "value": "emerald"
-            },
-            {
-              "caption": "Corporate",
-              "value": "corporate"
-            },
-            {
-              "caption": "Synthwave",
-              "value": "synthwave"
-            },
-            {
-              "caption": "Retro",
-              "value": "retro"
-            },
-            {
-              "caption": "Cyberpunk",
-              "value": "cyberpunk"
-            },
-            {
-              "caption": "Valentine",
-              "value": "valentine"
-            },
-            {
-              "caption": "Halloween",
-              "value": "halloween"
-            },
-            {
-              "caption": "Garden",
-              "value": "garden"
-            },
-            {
-              "caption": "Forest",
-              "value": "forest"
-            },
-            {
-              "caption": "Aqua",
-              "value": "aqua"
-            },
-            {
-              "caption": "Lofi",
-              "value": "lofi"
-            },
-            {
-              "caption": "Pastel",
-              "value": "pastel"
-            },
-            {
-              "caption": "Fantasy",
-              "value": "fantasy"
-            },
-            {
-              "caption": "Wireframe",
-              "value": "wireframe"
-            },
-            {
-              "caption": "Black",
-              "value": "black"
-            },
-            {
-              "caption": "Luxury",
-              "value": "luxury"
-            },
-            {
-              "caption": "Dracula",
-              "value": "dracula"
-            },
-            {
-              "caption": "cmyk",
-              "value": "cmyk"
+              "caption": "Acid",
+              "value": "acid"
             },
             {
               "caption": "Autumn",
               "value": "autumn"
             },
             {
-              "caption": "Business",
-              "value": "business"
+              "caption": "Bumblebee",
+              "value": "bumblebee"
             },
             {
-              "caption": "Acid",
-              "value": "acid"
+              "caption": "cmyk",
+              "value": "cmyk"
+            },
+            {
+              "caption": "Corporate",
+              "value": "corporate"
+            },
+            {
+              "caption": "Cupcake",
+              "value": "cupcake"
+            },
+            {
+              "caption": "Emerald",
+              "value": "emerald"
+            },
+            {
+              "caption": "Fantasy",
+              "value": "fantasy"
+            },
+            {
+              "caption": "Garden",
+              "value": "garden"
             },
             {
               "caption": "Lemonade",
               "value": "lemonade"
             },
             {
-              "caption": "Night",
-              "value": "night"
-            },
-            {
-              "caption": "Coffee",
-              "value": "coffee"
-            },
-            {
-              "caption": "Winter",
-              "value": "winter"
-            },
-            {
-              "caption": "Dim",
-              "value": "dim"
+              "caption": "Lofi",
+              "value": "lofi"
             },
             {
               "caption": "Nord",
               "value": "nord"
             },
             {
+              "caption": "Pastel",
+              "value": "pastel"
+            },
+            {
+              "caption": "Winter",
+              "value": "winter"
+            },
+            {
+              "caption": "Wireframe",
+              "value": "wireframe"
+            },
+            {},
+            {
+              "caption": "Dark",
+              "value": "dark"
+            },
+            {
+              "caption": "Black",
+              "value": "black"
+            },
+            {
+              "caption": "Business",
+              "value": "business"
+            },
+            {
+              "caption": "Coffee",
+              "value": "coffee"
+            },
+            {
+              "caption": "Dim",
+              "value": "dim"
+            },
+            {
+              "caption": "Dracula",
+              "value": "dracula"
+            },
+            {
+              "caption": "Forest",
+              "value": "forest"
+            },
+            {
+              "caption": "Halloween",
+              "value": "halloween"
+            },
+            {
+              "caption": "Luxury",
+              "value": "luxury"
+            },
+            {
+              "caption": "Night",
+              "value": "night"
+            },
+            {
               "caption": "Sunset",
               "value": "sunset"
+            },
+            {},
+            {
+              "caption": "Aqua",
+              "value": "aqua"
+            },
+            {
+              "caption": "Cyberpunk",
+              "value": "cyberpunk"
+            },
+            {
+              "caption": "Retro",
+              "value": "retro"
+            },
+            {
+              "caption": "Synthwave",
+              "value": "synthwave"
+            },
+            {
+              "caption": "Valentine",
+              "value": "valentine"
             }
           ],
           "type": "select"
         },
         {
           "caption": "Dialogue style",
-          "key": "closed_dialog_colors",
+          "key": "closedDialogColors",
           "options": [
             {
-              "caption": "Base 100 (default)",
+              "caption": "Base (default)",
               "value": "base-100"
             },
             {
-              "caption": "Base 200",
+              "caption": "Darker base",
               "value": "base-200"
             },
             {
-              "caption": "Base 300",
+              "caption": "Darkest base",
               "value": "base-300"
-            },
-            {
-              "caption": "Secondary",
-              "value": "secondary"
-            },
-            {
-              "caption": "Accent",
-              "value": "accent"
             },
             {
               "caption": "Neutral",
@@ -1295,43 +1322,44 @@
         },
         {
           "caption": "Background image",
-          "key": "closed_header_bg_image",
+          "key": "closedHeaderBgImage",
           "type": "header"
         },
         {
           "caption": "Background image",
           "description": "Recommended format: jpg-file, minimum 1024px x 1024p",
-          "key": "closed_bgimage",
+          "key": "closedBgimage",
           "type": "image"
         },
         {
           "caption": "Message",
-          "key": "closed_header_text",
+          "key": "closedHeaderText",
           "type": "header"
         },
         {
           "caption": "Title",
-          "key": "closed_title",
+          "key": "closedTitle",
           "type": "text"
         },
         {
           "caption": "Text",
-          "key": "closed_text",
+          "key": "closedText",
           "type": "text"
         },
         {
           "caption": "Image",
-          "key": "closed_header_fg_image_header",
+          "key": "closedHeaderFgImageHeader",
           "type": "header"
         },
         {
-          "caption": "Use foreground image",
-          "key": "closed_fgimage_use",
-          "type": "checkbox"
+          "caption": "Foreground image",
+          "description": "Format: png-file, minimum 450px wide",
+          "key": "closedFgimage",
+          "type": "image"
         },
         {
           "caption": "Size",
-          "key": "closed_fgimage_size",
+          "key": "closedFgimageSize",
           "options": [
             {
               "caption": "Small",
@@ -1349,57 +1377,46 @@
           "type": "select"
         },
         {
-          "caption": "Foreground image",
-          "description": "Format: png-file, minimum 450px wide",
-          "key": "closed_fgimage",
-          "type": "image"
-        },
-        {
-          "caption": "Signup",
-          "key": "closed_header_signup",
-          "type": "header"
-        },
-        {
-          "caption": "Message",
-          "key": "closed_signup_text",
-          "type": "text"
-        },
-        {
-          "caption": "Display signup form",
-          "description": "NOTE you need to create a form named signup in admin.",
-          "key": "closed_signup_true",
-          "type": "checkbox"
-        },
-        {
-          "caption": "Use daisyUI markup",
-          "description": "NOTE the form can only contain a email input field",
-          "key": "closed_daisysignup_true",
-          "type": "checkbox"
-        },
-        {
-          "caption": "Social media",
-          "key": "closed_header_social",
-          "type": "header"
-        },
-        {
-          "caption": "Display social media links",
-          "key": "closed_social_true",
-          "type": "checkbox"
-        },
-        {
           "caption": "Button",
-          "key": "closed_header_button",
+          "key": "closedHeaderButton",
           "type": "header"
         },
         {
           "caption": "Button text",
-          "key": "closed_button_text",
+          "key": "closedButtonText",
           "type": "text"
         },
         {
           "caption": "Add link",
-          "key": "closed_button_link",
+          "key": "closedButtonLink",
           "type": "text"
+        },
+        {
+          "caption": "Signup",
+          "key": "closedHeaderSignup",
+          "type": "header"
+        },
+        {
+          "caption": "Message",
+          "key": "closedSignupText",
+          "type": "text"
+        },
+        {
+          "caption": "Display signup form",
+          "default": "Select form",
+          "description": "You need to create a form in admin.",
+          "key": "closedSignupForm",
+          "type": "form"
+        },
+        {
+          "caption": "Social media",
+          "key": "closedHeaderSocial",
+          "type": "header"
+        },
+        {
+          "caption": "Display social media links",
+          "key": "closedSocialTrue",
+          "type": "checkbox"
         }
       ],
       "default": null

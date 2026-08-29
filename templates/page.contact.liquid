@@ -1,4 +1,4 @@
-{{ page | img_tag:"x1200",class:"absolute w-full right-0 max-h-[30vh] object-cover" }} 
+{% if settings.pageImage %}{{ page | img_tag:"x1200",class:"absolute w-full right-0 max-h-[30vh] object-cover" }}{% endif %}
 <header class="relative prose{{ settings.pageWidth }} mx-auto pt-20 pb-10">
    <h1 class="max-w-[80%]">{{ meta.h1 }}</h1>
 </header>
@@ -6,5 +6,5 @@
     <div class="{{ page.format }} pb-10">
         {{ page.html }}
     </div>
-    {% form settings.pageContactform.form %}{% endform %}
+    {% form 'contact' success:'Thank you for contacting us!' error:'Form contains errors, please try again!' %}{% endform %}
 </section>

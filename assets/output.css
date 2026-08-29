@@ -3640,15 +3640,6 @@
       --btn-p: 0.75rem;
       --size: calc(var(--size-field, 0.25rem) * 8);
     }
-    :is(.input-primary) {
-      --input-color: var(--color-primary);
-    }
-    .input-primary:focus {
-      --input-color: var(--color-primary);
-    }
-    .input-primary:focus-within {
-      --input-color: var(--color-primary);
-    }
     :is(.textarea-error) {
       --input-color: var(--color-error);
     }

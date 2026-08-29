@@ -184,7 +184,6 @@ form label {
     color: color-mix(in oklab,currentColor 100%,transparent);
     align-items: center;
     gap: .375rem;
-    text-transform: uppercase;
 }
 .cradle label:has(+ input:required):after {
     content: "*";
@@ -378,6 +377,7 @@ form label {
 .cradle label:has(input[type="checkbox"]) {
     margin-left: 0;
     text-transform: none;
+    align-items: center;
 }
 .cradle input[type="range"] {
     &::-moz-range-track {

@@ -693,11 +693,6 @@
           "type": "header"
         },
         {
-          "caption": "Use page content",
-          "key": "content",
-          "type": "header"
-        },
-        {
           "caption": "Page",
           "default": "Select page",
           "key": "homepage_page",

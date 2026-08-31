@@ -264,9 +264,6 @@ body {
     background-color: var(--btn-bg);
     background-size: auto, calc(var(--noise) * 100%);
     background-image: none, var(--btn-noise);
-    border-width: var(--border);
-    border-style: solid;
-    border-color: var(--btn-border);
     text-shadow: 0 0.5px oklch(100% 0 0 / calc(var(--depth) * 0.15));
     touch-action: manipulation;
     box-shadow: 0 0.5px 0 0.5px oklch(100% 0 0 / calc(var(--depth) * 6%)) inset, var(--btn-shadow);
@@ -274,6 +271,8 @@ body {
     --btn-p: 1rem;
     --btn-border: var(--btn-bg);  
     display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-primary-content);
 }
 .cradle input[type="checkbox"] {
     &:checked, &[aria-checked="true"] {

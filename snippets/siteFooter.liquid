@@ -3,7 +3,7 @@
       <div class="justify-self-start flex flex-wrap gap-x-16 gap-y-8">
         <aside class="flex flex-col gap-8">
             {% if settings.footerImage != empty %}
-                <img class="justify-self-start" src="{{ settings.footer_image_src | asset_img_url:'300','0' }}" alt="{{ settings.footer_image_alt | t:'default' }}">
+                <img width="300px" class="justify-self-start" src="{{ settings.footer_image_src | asset_img_url:'300','0' }}" alt="{{ settings.footer_image_alt | t:'default' }}">
             {% endif %}
             <div class="flex flex-col gap-6 max-w-md">
                 {% unless settings.footer_about_shop == empty %}

@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<html data-theme="{{ settings.closedDaisyTheme }}" class="text-base-content">
+<html data-theme="{{ settings.closedDaisyTheme }}" class="text-base-content" lang="{{ site.lang }}">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
         <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
         <title>{{ site.name }}</title>	
-        {% if metaDescription %}
-        <meta name="description" content="{{ metaDescription | escape }}" />
-        {% endif %}
-        {% if metaKeywords %}
-        <meta name="keywords" content="{{ metaKeywords | escape }}" />
-        {% endif %}
-        <link rel="canonical" href="{{ canonicalUrl | escape }}" />
+        <meta name="description" content="{{ metaDescription | escape }}" >
+        <meta name="keywords" content="{{ metaKeywords | escape }}" >
         <script type="application/ld+json">
             {% include 'structured-data' %}
         </script>
-        {% include 'open-graph-tags' %}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:image" content="{{ site | url }}/cover-full.png" >
+        <meta property="og:type" content="website" >
+        <meta property="og:title" content="{{ meta.title | escape }}" >
+        <meta property="og:description" content="{{ meta.description | escape }}" >
+        <meta property="og:site_name" content="{{ site.name | escape }}" >
+        <meta name="viewport" content="width=device-width, initial-scale=1" >
         <link rel="icon" href="/favicon.ico">
         <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
         <link rel="stylesheet" type="text/css" href="{{ 'output.css' | asset_url }}">
@@ -23,36 +22,34 @@
     </head>
     <body class="text-base-content flex flex-col justify-between min-h-[100vh] {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | split: ' ' | first | handle }}">
         <div class="hero min-h-screen" style="background-image: url('{{ settings.closedBgimage | asset_img_url:'1024','0' }}');">
-          <div class="hero-overlay bg-opacity-10"></div>
-          <div class="hero-content text-center card bg-{{ settings.closedDialogColors }} text-{{ settings.closedDialogColors }}-content m-4">
-            <div class="max-w-xl">
-                <header class="p-8">
-                  {% if settings.closedFgimage %}
-                    <img class="mx-auto mb-5" src="{{ settings.closedFgimage | asset_img_url: settings.closedFgimageSize,'0' }}">
-                  {% endif %}
-                  {% if settings.closedTitle %}
-                    <h1 class="mt-5 mb-5 text-3xl lg:text-4xl font-bold">{{ settings.closedTitle }}</h1>
-                  {% endif %}
-                  {% if settings.closedText %}
-                    <p class="mb-5">{{ settings.closedText }}</p>
-                  {% endif %}
-                  {% if settings.closedButtonLink and settings.closedButtonText %}
-                    <a class="btn btn-primary mb-5" href="{{ settings.closedButtonLink }}">{{ settings.closedButtonText }}</a>
-                  {% endif %}
-              </header>
-              {% unless settings.closedSignupForm == empty %}
+            <div class="hero-overlay bg-opacity-10"></div>
+            <div class="hero-content text-center card bg-{{ settings.closedDialogColors }} text-{{ settings.closedDialogColors }}-content m-4 max-w-xl">
+                <header class="p-8 flex flex-col gap-4">
+                    {% if settings.closedFgimage %}
+                    <img class="mx-auto" src="{{ settings.closedFgimage | asset_img_url: settings.closedFgimageSize,'0' }}" alt="{{ settings.closedImgAlt }}">
+                    {% endif %}
+                    {% if settings.closedTitle %}
+                    <h1 class="mt-5 text-3xl lg:text-4xl font-bold">{{ settings.closedTitle }}</h1>
+                    {% endif %}
+                    {% if settings.closedText %}
+                        <p>{{ settings.closedText }}</p>
+                    {% endif %}
+                    {% if settings.closedButtonLink and settings.closedButtonText %}
+                    <a class="btn btn-primary href="{{ settings.closedButtonLink }}">{{ settings.closedButtonText }}</a>
+                    {% endif %}
+                </header>
+                {% unless settings.closedSignupForm == empty %}
                     <div class="mb-5">
-                        <p class="">{{ settings.closedSignupText }}</p>
-                        {% form 'settings.closedSignupForm.form' success:'Thank you for contacting us!' error:'Form contains errors, please try again!' %}{% endform %}    
+                        <h2 class="text-xl mb-4">{{ settings.closedSignupText }}</h2>
+                        {% form settings.closedSignupForm success:'Thank you for contacting us!' error:'Form contains errors, please try again!' %}{% endform %}    
                     </div>
-              {% endunless %}
-              {% if settings.closedSocialTrue %}
-                <div class="grid grid-flow-col gap-4 justify-center mb-5">
-                    {% include 'socialmedia-icon-links' %}
-                </div>
-              {% endif %}
+                {% endunless %}
+                {% if settings.closedSocialTrue %}
+                    <div class="grid grid-flow-col gap-4 justify-center mb-8">
+                        {% include 'socialmedia-icon-links' %}
+                    </div>
+                {% endif %}
             </div>
-          </div>
         </div>
     </body>
 </html>

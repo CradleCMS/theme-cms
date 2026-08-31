@@ -36,7 +36,24 @@
             <div class="max-w-xs text-center">
                 <h3 class="text-2xl text-center mb-2">{{ settings.footerButtonTitle | def:'Sign up to our newsletter' | t:'default' }}</h3>
                 <p class="text-center text-md mb-8">{{ settings.footerButtonText | def:'Recieve information about our product launches and sales' | t:'default' }}</p>
-                {% include 'siteFooterSignup' %}                
+                <button id="open-sign-up" @click="document.getElementById('sign-up').showModal()" command="show-modal" commandfor="sign-up" class="btn btn-lg btn-primary">{{ 'Newsletter sign up' | t:'default'  }}</button>
+                <dialog id="sign-up" class="pt-10 p-4 w-md max-w-full bg-primary text-primary-content rounded-box" closedby="closerequest">
+                    <button @click="document.getElementById('sign-up').close()" id="close-sign-up" commandfor="sign-up" command="close" class="absolute top-3 right-2 p-0">
+                        <svg aria-hidden="true" fill="currentColor" class"hover:scale-110" width="24" height="24" viewBox="0 0 24 24">
+                            <g data-name="Layer 2">
+                            	<g data-name="close">
+                            		<rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"/>
+                            		<path d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"/>
+                            	</g>
+                            </g>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 class="text-2xl text-center mb-2">{{ settings.footerButtonTitle | def:'Sign up to our newsletter' | t:'default' }}</h3>
+                        <p class="text-center text-md">{{ settings.footerButtonText | def:'Recieve information about our product launches and sales' | t:'default' }}</p>        
+                    </div>
+                    {% form settings.footerButtonForm success:'Thank you for signing up!' error:'Form contains errors, please try again!' %}{% endform %}
+                </dialog>
             </div>
         {% endif %}
       </div>

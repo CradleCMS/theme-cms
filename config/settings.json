@@ -261,14 +261,6 @@
               "value": "base-300"
             },
             {
-              "caption": "Secondary",
-              "value": "secondary"
-            },
-            {
-              "caption": "Accent",
-              "value": "accent"
-            },
-            {
               "caption": "Neutral",
               "value": "neutral"
             }
@@ -1375,6 +1367,11 @@
             }
           ],
           "type": "select"
+        },
+        {
+          "caption": "Image alt",
+          "key": "closedImgAlt",
+          "type": "text"
         },
         {
           "caption": "Button",

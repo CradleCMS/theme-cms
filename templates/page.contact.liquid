@@ -6,5 +6,5 @@
     <div class="{{ page.format }} pb-10">
         {{ page.html }}
     </div>
-    {% form 'contact' success:'Thank you for contacting us!' error:'Form contains errors, please try again!' %}{% endform %}
+    {% form settings.pageContactform.form success:'Thank you for contacting us!' error:'Form contains errors, please try again!' %}{% endform %}
 </section>

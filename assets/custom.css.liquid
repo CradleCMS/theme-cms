@@ -232,22 +232,19 @@ body {
 .cradle input[type="reset"],
 .cradle button
 {
+    display: block;
+    min-width: 10rem;
+    max-width: 90%;
     margin: 0 auto;
     margin-top: 1em;
     margin-bottom: 0.5em; 
     padding: 0.5em;
-    display: inline-flex;
-    flex-shrink: 0;
+    padding-inline: var(--btn-p);
     cursor: pointer;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    gap: calc(0.375rem);
     text-align: center;
     vertical-align: middle;
     outline-offset: 2px;
     user-select: none;
-    padding-inline: var(--btn-p);
     color: var(--btn-fg);
     --tw-prose-links: var(--btn-fg);
     height: var(--size);
@@ -270,10 +267,24 @@ body {
     --size: calc(var(--size-field, 0.25rem) * 10);
     --btn-p: 1rem;
     --btn-border: var(--btn-bg);  
-    display: inline-block;
     background-color: var(--color-primary);
     color: var(--color-primary-content);
 }
+.cradle .form-success,
+.cradle .form-error {
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: var(--radius-field);
+}
+.cradle .form-success {
+    background-color: var(--color-success);    
+    color: var(--color-success-content);
+}
+.cradle .form-error {
+    background-color: var(--color-error);    
+    color: var(--color-success-error);
+}
+
 .cradle input[type="checkbox"] {
     &:checked, &[aria-checked="true"] {
       &::before { 

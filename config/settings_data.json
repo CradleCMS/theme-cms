@@ -2,6 +2,10 @@
   "current": "Default",
   "presets": {
     "Default": {
+      "articleCardImg": "landscape",
+      "articleRelated": true,
+      "blogFeeds": true,
+      "blogTagFiltering": true,
       "body_colors": "base-100",
       "closedText": "Check in later!",
       "closedTitle": "This is a closed site",

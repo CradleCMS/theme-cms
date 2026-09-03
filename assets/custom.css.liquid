@@ -51,6 +51,26 @@ dialog::backdrop {
 dialog button[type=submit] {
     width: 100%;
 }
+.card-body {
+    padding: 1rem;
+    container-type: size;
+    container-name: card-content;
+    contain-intrinsic-height: auto 200px;
+}
+@container card-content (height > 200px) {
+    div {
+        text-align: center;
+    }
+    h3 {
+        font-size: 3rem;     
+        text-align: center;
+        display: block;
+        margin-top: 4rem;
+    }
+    .card-actions {
+        justify-content: center;   
+    }
+}
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;

@@ -22,27 +22,13 @@
       "grid_items": [],
       "grid_show": false,
       "headShowSearch": true,
-      "headerLinklist": {
-        "entity": "navigation",
-        "id": "187d5ec4-fc09-89e2-aa29-ef6be6ce5236",
-        "navigation": "home",
-        "parent": ""
-      },
       "headerTopEnabled": false,
       "header_colors": "base-100",
-      "header_cta_link": "/page/contact",
-      "header_cta_link_text": "Contact us",
       "header_otf_glass": "",
       "header_otf_section": true,
       "header_otf_text": "Add content to front page in theme settings",
       "header_otf_title": "Default theme",
       "heder_otf_height": "[70vh]",
-      "homepage_page": {
-        "entity": "page",
-        "id": "187d5ed7-24c6-8446-b9bb-189f45434c4a",
-        "page": "contact",
-        "parent": ""
-      },
       "homepage_page_show": false,
       "link_grid_items": [],
       "link_grid_show": false,

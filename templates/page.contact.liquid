@@ -6,5 +6,9 @@
     <div class="{{ page.format }} pb-10">
         {{ page.html }}
     </div>
-    {% form settings.pageContactform.form success:'Thank you for contacting us!' error:'Form contains errors, please try again!' %}{% endform %}
+    {% if settings.pageContactform %}
+        {% form settings.pageContactform success:'Thank you for contacting us!' error:'Form contains errors, please try again!' %}{% endform %}
+    {% else %}
+        <p class="alert"><strong>Add a contact form in theme settings!</strong></p>
+    {% endif %}
 </section>

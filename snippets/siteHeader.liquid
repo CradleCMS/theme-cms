@@ -92,9 +92,9 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
                 </select>
             </a-lang>
             {% endif %}
-            {% if settings.headerPage != empty %}
+            {% if settings.headerCtaPage != empty %}
                 {% let p = pages[settings.headerCtaPage] %}
-                <a class="btn btn-primary btn" href="{{ p | url }}">{{ settings.headerCtaText | def:'Contact us' | t:'default' }}</a>
+                <a class="btn btn-primary btn-sm" href="{{ p | url }}">{{ settings.headerCtaText | def:'Contact us' | t:'default' }}</a>
             {% endif %}
         </div>
     </div>

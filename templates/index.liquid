@@ -8,24 +8,28 @@
     </div>
 </section>
 {% endif %}
-{% if settings.link_grid_show %}
+{% if settings.topGridShow %}
     <section id="link_grid" class="p-4 pt-16 mb-2 mt-10 items-center text-center">
-        <h2 class="text-3xl mb-4 font-bold">{{ settings.link_grid_heading | t }}</h2>
-        <div class="grid grid-cols-1 md:grid-cols-{{ settings.link_grid_column_amount_md }} lg:grid-cols-{{ settings.link_grid_column_amount_lg }} gap-4">
-            {% for item in settings.link_grid_items %}
-                <div class="card-body items-center text-center rounded-box {{ settings.general_shadow }} bg-base-100 text-base-content">
-                {% if item.link_heading %}
-                    <h4 class="card-title text-xl mb-4 font-bold justify-center">{{ item.link_heading | t }}</h4>
-                {% endif %}
-                {% if item.link_description %}
-                    <p class="text-center grow-0 mb-4">{{ item.link_description | t }}</p>
-                {% endif %}
-                {% if item.link_url  %}
-                <div class="card-actions justify-center">
-                  <a href="{{ item.link_url }}" class="btn btn-secondary btn-sm">{{ item.link_text | t }}</a>
+        {% unless settings.topGridHeading == blank %}
+        <h2 class="text-3xl mb-4 font-bold">{{ settings.topGridHeading | t }}</h2>
+        {% endunless %}
+        <div class="flex gap-4 overflow-x-scroll">
+            {% let imgWidth = settings.topGridItemWidth %}
+            {% let imgHeight = settings.topGridImgHeight %}
+            {% for item in settings.topGridItems %}
+                <div class="card-body p-0 gap-0 box-item grow-0 shrink-0 {% unless settings.topGridItemWidth == "0" %}w-[{{imgWidth}}px]{% endunless %} items-center text-center {% if settings.topGridBg %} bg-base-100 text-base-content rounded-box p-2 {{ settings.general_shadow }}{% endif %}">
+                    {% if item.url.size > 0 %}<a href="{{ item.url }}">{% endif %}
+                        {% if item.image != empty %}
+                        <img src="{{ item.image | asset_img_url:imgWidth,imgHeight }}" alt="{{ item.alt | t }}" class="mx-auto"/>
+                        {% endif %}
+                        {% if item.caption %}
+                            <h4 class="card-title text-xl mt-4 mb-2 p-1 font-bold justify-center ">{{ item.caption | t }}</h4>
+                        {% endif %}
+                        {% if item.desc %}
+                            <p class="text-center grow-0 mb-2 p-1">{{ item.desc | t }}</p>
+                        {% endif %}
+                    {% if item.url.size > 0 %}</a>{% endif %}
                 </div>
-                {% endif %}
-              </div>
             {% endfor %}
         </div>        
     </section>
@@ -33,13 +37,27 @@
 {% if settings.section_banner_show %}
     {% include 'indexBannerSections' %}
 {% endif %}
-{% if settings.grid_show %}
-    <section class="p-4 mb-2 mt-10 text-center">
-        <h2 class="text-3xl mb-4 font-bold">{{ settings.grid_heading | t }}</h2>
-        <div class="grid grid-cols-{{ settings.grid_column_amount_md }} lg:grid-cols-{{ settings.grid_column_amount_lg }} gap-4">
-            {% for item in settings.grid_items %}
-                <div class="card-body p-2 justify-self-center bg-base-100 text-base-content rounded-box" id="item{{ forloop.index0 }}">
-                    <img src="{{ item.image | asset_img_url:800,0 }}" alt="{{ item.image_alt | t }}"/>
+{% if settings.bottomGridShow %}
+    <section id="link_grid" class="p-4 pt-16 mb-2 mt-10 items-center text-center">
+        {% unless settings.bottomGridHeading == blank %}
+        <h2 class="text-3xl mb-4 font-bold">{{ settings.bottomGridHeading | t }}</h2>
+        {% endunless %}
+        <div class="flex gap-4 overflow-x-scroll">
+            {% let imgBWidth = settings.bottomGridItemWidth %}
+            {% let imgBHeight = settings.bottomGridImgHeight %}
+            {% for item in settings.bottomGridItems %}
+                <div class="card-body p-0 gap-0 box-item grow-0 shrink-0{% unless settings.bottomGridItemWidth == "0" %} w-[{{imgBWidth}}px]{% endunless %} items-center text-center {% if settings.bottomGridBg %} bg-base-100 text-base-content rounded-box p-2 {{ settings.general_shadow }}{% endif %}">
+                    {% if item.url.size > 0 %}<a href="{{ item.url }}">{% endif %}
+                        {% if item.image != empty %}
+                        <img src="{{ item.image | asset_img_url:imgBWidth,imgBHeight }}" alt="{{ item.alt | t }}" class="mx-auto"/>
+                        {% endif %}
+                        {% if item.caption %}
+                            <h4 class="card-title text-xl my-2 p-1 font-bold justify-center">{{ item.caption | t }}</h4>
+                        {% endif %}
+                        {% if item.desc %}
+                            <p class="text-center grow-0 mb-2 p-1">{{ item.desc | t }}</p>
+                        {% endif %}
+                    {% if item.url.size > 0 %}</a>{% endif %}
                 </div>
             {% endfor %}
         </div>        

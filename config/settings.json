@@ -704,105 +704,136 @@
           "type": "checkbox"
         },
         {
-          "caption": "Linkcard grid",
-          "description": "Grid for links",
-          "key": "link_grid",
+          "caption": "Top grid",
+          "description": "Add a row of logos, images or small notices. With optional links",
+          "key": "topGrid",
           "type": "header"
         },
         {
           "caption": "Show grid",
-          "key": "link_grid_show",
+          "key": "topGridShow",
           "type": "checkbox"
         },
         {
           "caption": "Section heading",
-          "key": "link_grid_heading",
+          "key": "topGridHeading",
           "type": "text"
         },
         {
-          "caption": "Columns on tablet",
-          "key": "link_grid_column_amount_md",
+          "caption": "Width",
+          "key": "topGridItemWidth",
           "options": [
             {
-              "caption": "1",
-              "value": "1"
+              "caption": "150px",
+              "value": "150"
             },
             {
-              "caption": "2",
-              "value": "2"
+              "caption": "200px",
+              "value": "200"
             },
             {
-              "caption": "3",
-              "value": "3"
+              "caption": "250px",
+              "value": "250"
             },
             {
-              "caption": "4",
-              "value": "4"
+              "caption": "300px",
+              "value": "300"
             },
             {
-              "caption": "5",
-              "value": "5"
+              "caption": "350px",
+              "value": "350"
             },
             {
-              "caption": "6",
-              "value": "6"
+              "caption": "400px",
+              "value": "400"
+            },
+            {
+              "caption": "500px",
+              "value": "500"
+            },
+            {
+              "caption": "Not set",
+              "value": "0"
             }
           ],
           "type": "select"
         },
         {
-          "caption": "Columns on desktop",
-          "key": "link_grid_column_amount_lg",
+          "caption": "Background color",
+          "key": "topGridBg",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Image height",
+          "key": "topGridImgHeight",
           "options": [
             {
-              "caption": "1",
-              "value": "1"
+              "caption": "100px",
+              "value": "100"
             },
             {
-              "caption": "2",
-              "value": "2"
+              "caption": "150px",
+              "value": "150"
             },
             {
-              "caption": "3",
-              "value": "3"
+              "caption": "200px",
+              "value": "200"
             },
             {
-              "caption": "4",
-              "value": "4"
+              "caption": "250px",
+              "value": "250"
             },
             {
-              "caption": "5",
-              "value": "5"
+              "caption": "300px",
+              "value": "300"
             },
             {
-              "caption": "6",
-              "value": "6"
+              "caption": "350px",
+              "value": "350"
+            },
+            {
+              "caption": "400px",
+              "value": "400"
+            },
+            {
+              "caption": "500px",
+              "value": "500"
+            },
+            {
+              "caption": "Not set",
+              "value": "0"
             }
           ],
           "type": "select"
         },
         {
-          "caption": "Linkcard contents",
-          "key": "link_grid_items",
+          "caption": "Box contents",
+          "key": "topGridItems",
           "settings": [
             {
+              "caption": "Image",
+              "description": "Recommended format: 500 px wide and jpg format.",
+              "key": "image",
+              "type": "image"
+            },
+            {
+              "caption": "Image alt-text",
+              "key": "alt",
+              "type": "text"
+            },
+            {
               "caption": "Caption",
-              "key": "link_heading",
+              "key": "caption",
               "type": "text"
             },
             {
               "caption": "Description",
-              "key": "link_description",
-              "type": "text"
-            },
-            {
-              "caption": "Link text",
-              "key": "link_text",
-              "type": "text"
+              "key": "desc",
+              "type": "textarea"
             },
             {
               "caption": "Link URL",
-              "key": "link_url",
+              "key": "url",
               "type": "text"
             }
           ],
@@ -891,98 +922,136 @@
           "type": "struct"
         },
         {
-          "caption": "Image grid",
-          "description": "Grid for images, showing multiple at the same time",
-          "key": "grid",
+          "caption": "Bottom grid",
+          "description": "Add a row of images or small notices. With optional links",
+          "key": "bottomGrid",
           "type": "header"
         },
         {
           "caption": "Show grid",
-          "key": "grid_show",
+          "key": "bottomGridShow",
           "type": "checkbox"
         },
         {
           "caption": "Section heading",
-          "key": "grid_heading",
+          "key": "bottomGridHeading",
           "type": "text"
         },
         {
-          "caption": "Columns on tablet",
-          "key": "grid_column_amount_md",
+          "caption": "Width",
+          "key": "bottomGridItemWidth",
           "options": [
             {
-              "caption": "1",
-              "value": "1"
+              "caption": "150px",
+              "value": "150"
             },
             {
-              "caption": "2",
-              "value": "2"
+              "caption": "200px",
+              "value": "200"
             },
             {
-              "caption": "3",
-              "value": "3"
+              "caption": "250px",
+              "value": "250"
             },
             {
-              "caption": "4",
-              "value": "4"
+              "caption": "300px",
+              "value": "300"
             },
             {
-              "caption": "5",
-              "value": "5"
+              "caption": "350px",
+              "value": "350"
             },
             {
-              "caption": "6",
-              "value": "6"
+              "caption": "400px",
+              "value": "400"
+            },
+            {
+              "caption": "500px",
+              "value": "500"
+            },
+            {
+              "caption": "Not set",
+              "value": "0"
             }
           ],
           "type": "select"
         },
         {
-          "caption": "Columns on desktop",
-          "key": "grid_column_amount_lg",
+          "caption": "Background color",
+          "key": "bottomGridBg",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Image height",
+          "key": "bottomGridImgHeight",
           "options": [
             {
-              "caption": "1",
-              "value": "1"
+              "caption": "100px",
+              "value": "100"
             },
             {
-              "caption": "2",
-              "value": "2"
+              "caption": "150px",
+              "value": "150"
             },
             {
-              "caption": "3",
-              "value": "3"
+              "caption": "200px",
+              "value": "200"
             },
             {
-              "caption": "4",
-              "value": "4"
+              "caption": "250px",
+              "value": "250"
             },
             {
-              "caption": "5",
-              "value": "5"
+              "caption": "300px",
+              "value": "300"
             },
             {
-              "caption": "6",
-              "value": "6"
+              "caption": "350px",
+              "value": "350"
+            },
+            {
+              "caption": "400px",
+              "value": "400"
+            },
+            {
+              "caption": "500px",
+              "value": "500"
+            },
+            {
+              "caption": "Not set",
+              "value": "0"
             }
           ],
           "type": "select"
         },
         {
-          "caption": "Images",
-          "key": "grid_items",
+          "caption": "Box contents",
+          "key": "bottomGridItems",
           "settings": [
             {
               "caption": "Image",
               "description": "Recommended format: 500 px wide and jpg format.",
               "key": "image",
-              "maxHeight": 1024,
-              "maxWidth": 1300,
               "type": "image"
             },
             {
               "caption": "Image alt-text",
-              "key": "image_alt",
+              "key": "alt",
+              "type": "text"
+            },
+            {
+              "caption": "Caption",
+              "key": "caption",
+              "type": "text"
+            },
+            {
+              "caption": "Description",
+              "key": "desc",
+              "type": "textarea"
+            },
+            {
+              "caption": "Link URL",
+              "key": "url",
               "type": "text"
             }
           ],

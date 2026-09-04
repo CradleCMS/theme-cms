@@ -1,5 +1,6 @@
 :root {
     --padding-card: 1rem;    
+    --card-p: 1rem;
 }
 .RTE summary {
   padding: 0.2em;
@@ -51,7 +52,7 @@ dialog::backdrop {
 dialog button[type=submit] {
     width: 100%;
 }
-.card-body {
+.article-card {
     padding: 1rem;
     container-type: size;
     container-name: card-content;
@@ -99,6 +100,18 @@ body {
 }
 .skip-link:focus {
   transform: translateY(0%);
+}
+.box-item {
+    min-width: 10rem;
+}
+.box-item img{
+    max-height: 80vh;
+}
+.box-item:first-child {
+    margin-left: auto;
+} 
+.box-item:last-child {
+    margin-right: auto;
 }
 
 /* RTE styles */

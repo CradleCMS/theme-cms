@@ -2036,8 +2036,12 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .my-2 {
+    margin-block: calc(var(--spacing) * 2);
+  }
   @layer daisyui.l1.l2.l3 {
     .breadcrumbs {
+      margin-inline-start: calc(0.25rem * -1);
       max-width: 100%;
       overflow-x: auto;
       padding-block: calc(0.25rem * 2);
@@ -2046,6 +2050,7 @@
       display: flex;
       min-height: min-content;
       align-items: center;
+      padding-inline-start: 0.25rem;
       white-space: nowrap;
     }
     .breadcrumbs > menu  > li {
@@ -2095,6 +2100,7 @@
       display: flex;
       min-height: min-content;
       align-items: center;
+      padding-inline-start: 0.25rem;
       white-space: nowrap;
     }
     .breadcrumbs > ul  > li {
@@ -2144,6 +2150,7 @@
       display: flex;
       min-height: min-content;
       align-items: center;
+      padding-inline-start: 0.25rem;
       white-space: nowrap;
     }
     .breadcrumbs > ol  > li {
@@ -3195,6 +3202,9 @@
   .justify-items-center {
     justify-items: center;
   }
+  .gap-0 {
+    gap: 0px;
+  }
   .gap-1 {
     gap: var(--spacing);
   }
@@ -3229,9 +3239,6 @@
   .place-self-stretch {
     place-self: stretch;
   }
-  .justify-self-center {
-    justify-self: center;
-  }
   .justify-self-start {
     justify-self: flex-start;
   }
@@ -3239,6 +3246,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+  .overflow-x-scroll {
+    overflow-x: scroll;
   }
   .rounded-box {
     border-radius: var(--radius-box);
@@ -3341,6 +3351,9 @@
   }
   .p-0 {
     padding: 0px;
+  }
+  .p-1 {
+    padding: var(--spacing);
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
@@ -3448,11 +3461,6 @@
       --alert-border-color: var(--color-error);
       --alert-color: var(--color-error);
     }
-    .alert-success {
-      color: var(--color-success-content);
-      --alert-border-color: var(--color-success);
-      --alert-color: var(--color-success);
-    }
   }
   .text-accent-content {
     color: var(--color-accent-content);
@@ -3528,31 +3536,10 @@
       --btn-fg: var(--color-primary-content);
       --btn-soft-bg: initial;
     }
-    .btn-secondary {
-      --btn-color: var(--color-secondary);
-      --btn-fg: var(--color-secondary-content);
-      --btn-soft-bg: initial;
-    }
     .btn-sm {
       --fontsize: 0.75rem;
       --btn-p: 0.75rem;
       --size: calc(var(--size-field, 0.25rem) * 8);
-    }
-    :is(.textarea-error) {
-      --input-color: var(--color-error);
-    }
-    .textarea-error:focus {
-      --input-color: var(--color-error);
-    }
-    .textarea-error:focus-within {
-      --input-color: var(--color-error);
-    }
-    .textarea-lg {
-      --font-size-min: 1.125rem;
-    }
-    .floating-label:has(.textarea-lg) {
-      --top-mul: 6;
-      --font-size: 1.125rem;
     }
     .badge-accent {
       --badge-color: var(--color-accent);

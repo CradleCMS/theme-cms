@@ -23,7 +23,7 @@
             {% for linkList in settings.footerLinklists %}
               <nav class="flex flex-col gap-4 mt-4">
                 <header class="footer-title">{{ linkList.title }}</header> 
-                {% for link in navigation[linkList].links %}
+                {% for link in navigation[linkList.linkList].links %}
                 <a class="link link-hover uppercase text-xs" href="{{ link | url }}">{{ link.title }}</a>
                 {% endfor %}
               </nav> 

@@ -1,0 +1,6 @@
+{% layout 'emptyBody' %}
+{% if allTags contains '!render' %}
+  {{ page.html | render }}
+{% else %}
+  {{ page.html }}
+{% endif %}

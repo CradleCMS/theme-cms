@@ -225,7 +225,8 @@ body {
     align-items: center;
     gap: .375rem;
 }
-.cradle label:has(+ input:required):after {
+.cradle label:has(+ input:required):after,
+.cradle label:has(+ textarea:required):after {
     content: "*";
     padding-left: 0.2rem;
 }

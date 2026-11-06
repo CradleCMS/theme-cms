@@ -1,6 +1,6 @@
 {
   "name": "Cradle CMS theme",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "developer": "CradleCMS",
   "description": "CMS theme based on tailwindcss, daisyUI and Alpine.js.",
   "source": "https://github.com/CradleCMS/theme-cms/",
@@ -83,6 +83,22 @@
           "caption": "Font TTF",
           "key": "fontHeadingTTF",
           "type": "asset"
+        },
+        {
+          "caption": "Landing page",
+          "description": "Settings for landing page template",
+          "key": "pageLanding",
+          "type": "header"
+        },
+        {
+          "caption": "Use site header",
+          "key": "pageLandingHeader",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Use site footer",
+          "key": "pageLandingFooter",
+          "type": "checkbox"
         },
         {
           "caption": "Development",
